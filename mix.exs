@@ -26,7 +26,7 @@ defmodule PCA9685.MixProject do
       maintainers: ["James Harton <james@automat.nz>"],
       licenses: ["MIT"],
       links: %{
-        "Source" => "https://gitlab.com/jimsy/ssd1306"
+        "Source" => "https://gitlab.com/jimsy/pca9685"
       }
     ]
   end
