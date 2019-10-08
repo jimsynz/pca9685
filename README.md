@@ -8,7 +8,7 @@ Add your device to your config like so:
 
 ```elixir
 config :pca9685,
-  devices: [%{%{bus: "i2c-1", address: 0x40}}]
+  devices: [%{bus: "i2c-1", address: 0x40}]
 ```
 
 The properties `bus` and `address` are mandatory.  You can optionally provide

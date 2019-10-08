@@ -8,7 +8,7 @@ defmodule PCA9685 do
   Add your device to your config like so:
 
       config :pca9685,
-        devices: [%{%{bus: "i2c-1", address: 0x40}}]
+        devices: [%{bus: "i2c-1", address: 0x40}]
 
   The properties `bus` and `address` are mandatory.  You can optionally provide
   `pwm_freq` which is the output frequency you'd like to set (in Hz) and
