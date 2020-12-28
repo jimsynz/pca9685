@@ -1,10 +1,12 @@
 defmodule PCA9685.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :pca9685,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       description: "Driver for PCA9685 16 channel 12-bit PWM driver connected via I2C",
@@ -23,7 +25,7 @@ defmodule PCA9685.MixProject do
 
   def package do
     [
-      maintainers: ["James Harton <james@automat.nz>"],
+      maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["MIT"],
       links: %{
         "Source" => "https://gitlab.com/jimsy/pca9685"
@@ -35,7 +37,9 @@ defmodule PCA9685.MixProject do
   defp deps do
     [
       {:elixir_ale, "~> 1.2"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: ~w[dev test]a},
+      {:credo, "~> 1.1", only: ~w[dev test]a, runtime: false},
+      {:git_ops, "~> 2.3", only: ~w[dev test]a, runtime: false}
     ]
   end
 end
