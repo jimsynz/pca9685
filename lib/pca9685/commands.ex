@@ -61,9 +61,7 @@ defmodule PCA9685.Commands do
          <<mode1>> <- I2C.write_read(pid, <<@mode1>>, 1),
          :ok <- I2C.write(pid, <<@mode1, mode1 &&& ~~~@sleep>>),
          :ok <- :timer.sleep(5),
-         :ok <- set_pwm_frequency(pid, freq_hz) do
-      :ok
-    end
+         do: set_pwm_frequency(pid, freq_hz)
   end
 
   @doc false
@@ -98,9 +96,7 @@ defmodule PCA9685.Commands do
          :ok <- I2C.write(pid, <<@prescale, prescale>>),
          :ok <- I2C.write(pid, <<@mode1, old_mode>>),
          :ok <- :timer.sleep(5),
-         :ok <- I2C.write(pid, <<@mode1, old_mode ||| 0x80>>) do
-      :ok
-    end
+         do: I2C.write(pid, <<@mode1, old_mode ||| 0x80>>)
   end
 
   def set_pwm_frequency(_pid, hz), do: {:error, "#{hz}hz is outside available range."}
@@ -113,8 +109,7 @@ defmodule PCA9685.Commands do
     with :ok <- I2C.write(pid, <<@all_led_on_l, on &&& 0xFF>>),
          :ok <- I2C.write(pid, <<@all_led_on_h, on >>> 8>>),
          :ok <- I2C.write(pid, <<@all_led_off_l, off &&& 0xFF>>),
-         :ok <- I2C.write(pid, <<@all_led_off_h, off >>> 8>>),
-         do: :ok
+         do: I2C.write(pid, <<@all_led_off_h, off >>> 8>>)
   end
 
   def set_all_pwm(_pid, _on, _off), do: {:error, "Invalid PWM values."}
@@ -128,8 +123,7 @@ defmodule PCA9685.Commands do
     with :ok <- I2C.write(pid, <<@led0_on_l + 4 * channel, on &&& 0xFF>>),
          :ok <- I2C.write(pid, <<@led0_on_h + 4 * channel, on >>> 8>>),
          :ok <- I2C.write(pid, <<@led0_off_l + 4 * channel, off &&& 0xFF>>),
-         :ok <- I2C.write(pid, <<@led0_off_h + 4 * channel, off >>> 8>>),
-         do: :ok
+         do: I2C.write(pid, <<@led0_off_h + 4 * channel, off >>> 8>>)
   end
 
   def set_one_pwm(_pid, _channel, _on, _off), do: {:error, "Invalid channel or duty cycle."}
