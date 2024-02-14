@@ -28,7 +28,7 @@ defmodule PCA9685.MixProject do
       maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["HL3-FULL"],
       links: %{
-        "Source" => "https://gitlab.com/jimsy/pca9685"
+        "Source" => "https://harton.dev/james/pca9685"
       }
     ]
   end
@@ -37,8 +37,10 @@ defmodule PCA9685.MixProject do
   defp deps do
     [
       {:elixir_ale, "~> 1.2"},
-      {:ex_doc, ">= 0.28.1", only: ~w[dev test]a},
+      {:dialyxir, "~> 1.4", only: ~w[dev test]a, runtime: false},
+      {:doctor, "~> 0.21", only: ~w[dev test]a, runtime: false},
       {:credo, "~> 1.6", only: ~w[dev test]a, runtime: false},
+      {:ex_doc, ">= 0.28.1", only: ~w[dev test]a, runtime: false},
       {:git_ops, "~> 2.4", only: ~w[dev test]a, runtime: false}
     ]
   end

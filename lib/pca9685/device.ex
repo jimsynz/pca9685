@@ -85,9 +85,8 @@ defmodule PCA9685.Device do
     with {:ok, pid} <- Commands.start_link(bus, address),
          state <- Map.put(state, :i2c, pid),
          state <- Map.put(state, :name, name),
-         :ok <- Commands.initialize!(pid, state.pwm_freq),
-         state <- initialize_output_enable_pin(state) do
-      {:ok, state}
+         :ok <- Commands.initialize!(pid, state.pwm_freq) do
+      initialize_output_enable_pin(state)
     end
   end
 
@@ -149,11 +148,11 @@ defmodule PCA9685.Device do
   defp initialize_output_enable_pin(%{oe_pin: oe_pin} = state) when is_integer(oe_pin) do
     with {:ok, pid} <- OutputEnable.start_link(oe_pin),
          :ok <- OutputEnable.enable(pid) do
-      Map.put(state, :oe, pid)
+      {:ok, Map.put(state, :oe, pid)}
     end
   end
 
-  defp initialize_output_enable_pin(state), do: state
+  defp initialize_output_enable_pin(state), do: {:ok, state}
 
   @doc false
   def child_spec(config) do

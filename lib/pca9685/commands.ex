@@ -1,7 +1,7 @@
 defmodule PCA9685.Commands do
   alias ElixirALE.I2C
+  import Bitwise
   import PCA9685.Guards
-  use Bitwise
   require Logger
 
   @moduledoc """
@@ -9,12 +9,12 @@ defmodule PCA9685.Commands do
   """
 
   # Registers/etc:
-  @pca9685_address 0x40
+  # @pca9685_address 0x40
   @mode1 0x00
   @mode2 0x01
-  @subadr1 0x02
-  @subadr2 0x03
-  @subadr3 0x04
+  # @subadr1 0x02
+  # @subadr2 0x03
+  # @subadr3 0x04
   @prescale 0xFE
   @led0_on_l 0x06
   @led0_on_h 0x07
@@ -26,10 +26,10 @@ defmodule PCA9685.Commands do
   @all_led_off_h 0xFD
 
   # Bits:
-  @restart 0x80
+  # @restart 0x80
   @sleep 0x10
   @allcall 0x01
-  @invrt 0x10
+  # @invrt 0x10
   @outdrv 0x04
 
   # The I2C bus name

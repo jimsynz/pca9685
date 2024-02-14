@@ -8,7 +8,7 @@ defmodule PCA9685.OutputEnable do
   @doc """
   Connect to a specific GPIO pin as an output.
   """
-  @spec start_link(non_neg_integer) :: :ok | {:error, term}
+  @spec start_link(non_neg_integer) :: GenServer.on_start()
   def start_link(pin), do: GPIO.start_link(pin, :output)
 
   @doc false

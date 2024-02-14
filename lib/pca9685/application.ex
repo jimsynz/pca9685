@@ -5,6 +5,7 @@ defmodule PCA9685.Application do
 
   use Application
 
+  @doc false
   def start(_type, _args) do
     children = [
       {Registry, keys: :unique, name: PCA9685.Registry}
