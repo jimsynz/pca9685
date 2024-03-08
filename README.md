@@ -44,7 +44,7 @@ be found at [https://hexdocs.pm/pca9685](https://hexdocs.pm/pca9685).
 ## Github Mirror
 
 This repository is mirrored [on Github](https://github.com/jimsynz/pca9685)
-from it's primary location [on my Forejo instance](https://harton.dev/james/pca9685).
+from it's primary location [on my Forgejo instance](https://harton.dev/james/pca9685).
 Feel free to raise issues and open PRs on Github.
 
 ## License
