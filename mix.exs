@@ -38,7 +38,7 @@ defmodule PCA9685.MixProject do
     [
       {:elixir_ale, "~> 1.2"},
       {:dialyxir, "~> 1.4", only: ~w[dev test]a, runtime: false},
-      {:doctor, "~> 0.21", only: ~w[dev test]a, runtime: false},
+      {:doctor, "~> 0.22", only: ~w[dev test]a, runtime: false},
       {:credo, "~> 1.6", only: ~w[dev test]a, runtime: false},
       {:ex_check, "~> 0.16", only: ~w[dev test]a, runtime: false},
       {:ex_doc, ">= 0.28.1", only: ~w[dev test]a, runtime: false},
