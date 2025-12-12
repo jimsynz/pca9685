@@ -18,8 +18,7 @@ defmodule PCA9685.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      mod: {PCA9685.Application, []}
+      extra_applications: [:logger]
     ]
   end
 
@@ -36,7 +35,11 @@ defmodule PCA9685.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:elixir_ale, "~> 1.2"},
+      {:wafer, "~> 1.1 and >= 1.1.1"},
+      {:circuits_i2c, "~> 2.0"},
+      {:circuits_gpio, "~> 2.0"},
+      {:nimble_options, "~> 1.0"},
+      {:mimic, "~> 1.7", only: ~w[dev test]a, runtime: false},
       {:dialyxir, "~> 1.4", only: ~w[dev test]a, runtime: false},
       {:doctor, "~> 0.22", only: ~w[dev test]a, runtime: false},
       {:credo, "~> 1.6", only: ~w[dev test]a, runtime: false},
