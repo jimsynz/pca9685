@@ -39,7 +39,7 @@ defmodule PCA9685.MixProject do
       {:circuits_i2c, "~> 2.0"},
       {:circuits_gpio, "~> 2.0"},
       {:nimble_options, "~> 1.0"},
-      {:mimic, "~> 1.7", only: ~w[dev test]a, runtime: false},
+      {:mimic, "~> 2.0", only: ~w[dev test]a, runtime: false},
       {:dialyxir, "~> 1.4", only: ~w[dev test]a, runtime: false},
       {:doctor, "~> 0.22", only: ~w[dev test]a, runtime: false},
       {:credo, "~> 1.6", only: ~w[dev test]a, runtime: false},
