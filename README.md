@@ -1,6 +1,5 @@
 # PCA9685
 
-[![Build Status](https://drone.harton.dev/api/badges/james/pca9685/status.svg)](https://drone.harton.dev/james/pca9685)
 [![Hex.pm](https://img.shields.io/hexpm/v/pca9685.svg)](https://hex.pm/packages/pca9685)
 [![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 
